@@ -16,8 +16,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.app.jetpacknavigationdrawer.screens.GroceryListScreen
 import com.app.jetpacknavigationdrawer.screens.HomeScreen
-import com.app.jetpacknavigationdrawer.screens.InfoScreen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -103,7 +103,7 @@ fun NavigationDrawer() {
 fun AppNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(navController = navController, startDestination = "home", modifier = modifier) {
         composable("home") { HomeScreen() }
-        composable("info") { InfoScreen() }
+        composable("info") { GroceryListScreen() }
         composable("edit") { HomeScreen() }
         composable("settings") { HomeScreen() }
     }

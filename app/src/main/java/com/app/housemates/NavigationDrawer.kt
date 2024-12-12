@@ -1,4 +1,4 @@
-package com.app.jetpacknavigationdrawer
+package com.app.housemates
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -16,8 +16,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.app.jetpacknavigationdrawer.screens.GroceryListScreen
-import com.app.jetpacknavigationdrawer.screens.HomeScreen
+import com.app.housemates.screens.GroceryListScreen
+import com.app.housemates.screens.HomeScreen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)

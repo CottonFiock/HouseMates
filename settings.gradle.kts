@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JetPackNavigationDrawer"
+rootProject.name = "HouseMates"
 include(":app")
  

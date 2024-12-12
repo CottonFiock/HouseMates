@@ -1,4 +1,4 @@
-package com.app.jetpacknavigationdrawer.data.model
+package com.app.housemates.data.model
 
 data class User (
     val name: String,

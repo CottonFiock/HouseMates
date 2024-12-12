@@ -1,4 +1,4 @@
-package com.app.jetpacknavigationdrawer.screens
+package com.app.housemates.screens
 
 import UserViewModel
 import androidx.compose.foundation.layout.Column
@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.app.jetpacknavigationdrawer.R
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -24,7 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.rememberAsyncImagePainter
-import com.app.jetpacknavigationdrawer.data.model.User
+import com.app.housemates.data.model.User
 
 @Composable
 @Preview
@@ -68,7 +67,7 @@ fun UserRow(user: User) {
                     .clip(CircleShape)
             )
             Spacer(modifier = Modifier.width(16.dp))
-            Column(modifier = Modifier.padding(dimensionResource(R.dimen.padding_small))) {
+            Column(modifier = Modifier.padding(8.dp)) {
                 Text(text = user.name)
                 Text(text = user.status)
             }

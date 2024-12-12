@@ -1,4 +1,4 @@
-package com.app.jetpacknavigationdrawer.screens
+package com.app.housemates.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

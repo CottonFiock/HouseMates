@@ -1,4 +1,4 @@
-package com.app.jetpacknavigationdrawer
+package com.app.housemates
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

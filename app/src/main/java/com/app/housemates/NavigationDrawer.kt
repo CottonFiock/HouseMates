@@ -18,6 +18,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.app.housemates.screens.GroceryListScreen
 import com.app.housemates.screens.HomeScreen
+import com.app.housemates.screens.PhoneNumbersScreen
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -27,10 +28,24 @@ fun NavigationDrawer() {
     val navController = rememberNavController()
     val items = listOf(
         NavigationItems("Home", Icons.Filled.Home, Icons.Outlined.Home),
-        NavigationItems("Info", Icons.Filled.Info, Icons.Outlined.Info),
-        NavigationItems("Edit", Icons.Filled.Edit, Icons.Outlined.Edit, 105),
-        NavigationItems("Settings", Icons.Filled.Settings, Icons.Outlined.Settings)
+        NavigationItems("Groceries", Icons.Filled.ShoppingCart, Icons.Outlined.ShoppingCart),
+        NavigationItems("Expenses", Icons.Filled.Euro, Icons.Outlined.Euro),
+        NavigationItems("Chores", Icons.Filled.Checklist, Icons.Outlined.Checklist),
+        NavigationItems("Calendar", Icons.Filled.CalendarMonth, Icons.Outlined.CalendarMonth),
+        NavigationItems("Phone numbers", Icons.Filled.Phone, Icons.Outlined.Phone),
+        NavigationItems("Settings", Icons.Filled.Settings, Icons.Outlined.Settings),
+
     )
+
+    /*
+    * Home
+    * Grocery Shopping
+    * Expenses
+    * Chores
+    * Calendar
+    * Phone numbers
+    * Settings
+    * */
 
     var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
@@ -52,9 +67,12 @@ fun NavigationDrawer() {
                             }
                             when (index) {
                                 0 -> navController.navigate("home")
-                                1 -> navController.navigate("info")
-                                2 -> navController.navigate("edit")
-                                3 -> navController.navigate("settings")
+                                1 -> navController.navigate("groceries")
+                                2 -> navController.navigate("expenses")
+                                3 -> navController.navigate("chores")
+                                4 -> navController.navigate("calendar")
+                                5 -> navController.navigate("phone")
+                                6 -> navController.navigate("settings")
                             }
                         },
                         icon = {
@@ -75,7 +93,7 @@ fun NavigationDrawer() {
         Scaffold(
             topBar = {
                 TopAppBar(
-                    title = { Text(text = "Navigation Drawer Example") },
+                    title = { Text(text = "House Mates") },
                     navigationIcon = {
                         IconButton(onClick = {
                             scope.launch {
@@ -103,8 +121,11 @@ fun NavigationDrawer() {
 fun AppNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(navController = navController, startDestination = "home", modifier = modifier) {
         composable("home") { HomeScreen() }
-        composable("info") { GroceryListScreen() }
-        composable("edit") { HomeScreen() }
+        composable("groceries") { GroceryListScreen() }
+        composable("expenses") { HomeScreen() }
+        composable("chores") { HomeScreen() }
+        composable("calendar") { HomeScreen() }
+        composable("phone") { PhoneNumbersScreen() }
         composable("settings") { HomeScreen() }
     }
 }
